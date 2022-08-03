@@ -52,6 +52,7 @@ alias mv='mv -i'
 alias ll='ls -l'
 alias la='ls -aF'
 alias sc='screen -D -RR'
+alias ta='tmux a'
 alias lv='lv -Ou8'
 # git aliases
 alias g='git'
