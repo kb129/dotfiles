@@ -1,4 +1,5 @@
 ROOT=$(cd $(dirname $0); pwd)
+unlink $HOME/.bash_profile
 unlink $HOME/.bashrc
 unlink $HOME/.tmux.conf
 rm -rf $HOME/.vim
