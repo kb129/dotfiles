@@ -50,13 +50,13 @@ nnoremap k gk
 
 " Tab系
 " 不可視文字を可視化(タブが「?-」と表示される)
-set list listchars=tab:\?\-
+"set list listchars=tab:\?\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
 set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=44
+set shiftwidth=4
 
 
 " 検索系
@@ -163,8 +163,8 @@ command! CtrlPCommandLine call ctrlp#init(ctrlp#commandline#id())
 let g:ctrlp_funky_matchtype = 'type'
 
 " NERDTree Settings
-let g:NERDTreeShowBookmarks=1 " ブックマークを初期表示
-autocmd vimenter * NERDTree
+"let g:NERDTreeShowBookmarks=1 " ブックマークを初期表示
+"autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> gt
 map <C-h> gT
