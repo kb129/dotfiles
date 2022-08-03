@@ -55,6 +55,8 @@ alias sc='screen -D -RR'
 alias lv='lv -Ou8'
 # git aliases
 alias g='git'
+alias gbra='git branch'
+alias gchk='git checkout'
 alias gst='git status'
 alias gl='git pull'
 alias gp='git push'
