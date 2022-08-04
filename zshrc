@@ -8,12 +8,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # alias
-alias la='ls -la'
-alias ll='ls -l'
-
-export PATH="$PATH:/Users/daikiokonogi/dev/flutter/bin"
-export PATH="$PATH:$HOME/.nodebrew/current/bin"
-export PATH="$PATH:$HOME/.pub-cache/bin"
+if [ -f $HOME/.zsh_aliases ];then
+    source $HOME/.zsh_aliases
+fi
 
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #	exec startx
