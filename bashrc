@@ -46,24 +46,6 @@ export HISTIGNORE="pwd*:fg*:bg*"
 #export HISTIGNORE="cd*:pwd*:fg*:bg*"
 export HISTSIZE=10000
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias ll='ls -l'
-alias la='ls -aF'
-alias sc='screen -D -RR'
-alias ta='tmux a'
-alias lv='lv -Ou8'
-# git aliases
-alias g='git'
-alias gbra='git branch'
-alias gchk='git checkout'
-alias gst='git status'
-alias gl='git pull'
-alias gp='git push'
-alias ga='git add'
-alias gc='git commit'
-alias gcm='git commit -F- << EOM'
 
 export EDITOR='vi'
 export SVN_SSH='ssh -q'
