@@ -12,6 +12,13 @@ if [ -f $HOME/.zsh_aliases ];then
     source $HOME/.zsh_aliases
 fi
 
+# conda
+CONDA_PREFIX=${HOME}/dev/conda
+source ${CONDA_PREFIX}/bin/activate ${CONDA_PREFIX}/envs/`hostname -s`39
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #	exec startx
 #fi
