@@ -20,7 +20,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -F- << EOM'
 alias gf='git fetch'
-alias ghq-cd='cd $(ghq root)/$(ghq list | fzf)'
+alias cdd='cd $(ghq root)/$(ghq list | fzf)'
 
 alias slnotify='python $(ghq root)/github.com/kb129/slack_notify/notify.py "(from `hostname`)"'
 
