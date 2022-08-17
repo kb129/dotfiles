@@ -19,6 +19,9 @@ source ${CONDA_PREFIX}/bin/activate ${CONDA_PREFIX}/envs/`hostname -s`39
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# fzf
+export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit-0 --multi'
+
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #	exec startx
 #fi

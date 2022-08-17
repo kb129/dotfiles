@@ -18,3 +18,5 @@ alias gp='git push'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -F- << EOM'
+alias ghq-cd='cd $(ghq root)/$(ghq list | fzf)'
+
