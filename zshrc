@@ -16,6 +16,11 @@ fi
 CONDA_PREFIX=${HOME}/dev/conda
 source ${CONDA_PREFIX}/bin/activate ${CONDA_PREFIX}/envs/`hostname -s`39
 
+# homebrew
+if [ `uname` == 'Linux' ]; then
+    PATH=${PATH}:$HOME/homebrew/bin
+fi
+
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
