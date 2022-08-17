@@ -13,7 +13,7 @@ alias g='git'
 alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
-alias gs='git status'
+alias gst='git status'
 alias gl='git pull'
 alias gp='git push'
 alias ga='git add'
@@ -21,4 +21,7 @@ alias gc='git commit'
 alias gcm='git commit -F- << EOM'
 alias gf='git fetch'
 alias ghq-cd='cd $(ghq root)/$(ghq list | fzf)'
+
+alias slnotify='python $(ghq root)/github.com/kb129/slack_notify/notify.py "(from `hostname`)"'
+
 
