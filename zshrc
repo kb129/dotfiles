@@ -45,3 +45,4 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 #	fi
 # fi
 
+eval "$(starship init zsh)"
