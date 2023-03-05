@@ -2,49 +2,42 @@
 # Executes commands at the start of an interactive session.
 #
 
+# PATH settings
+typeset -U path PATH
+path=(
+  ${HOMEBREW_PREFIX}/bin(N-/)
+  ${HOMEBREW_PREFIX}/sbin(N-/)
+  /usr/bin
+  /usr/sbin
+  /bin
+  /sbin
+  /usr/local/bin(N-/)
+  /usr/local/sbin(N-/)
+  $HOME/.nodebrew/current/bin(N-/)
+)
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# alias
+# aliases
 if [ -f $HOME/.zsh_aliases ];then
     source $HOME/.zsh_aliases
 fi
 
 # conda
 CONDA_PREFIX=${HOME}/dev/conda
-source ${CONDA_PREFIX}/bin/activate ${CONDA_PREFIX}/envs/`hostname -s`39
-
-# homebrew
-if [ `uname` = 'Linux' ]; then
-    PATH=${PATH}:$HOME/homebrew/bin
+CONDA_LOCALENVNAME=${CONDA_PREFIX}/envs/`hostname -s`
+if [ -d ${CONDA_LOCALENVNAME} ]; then
+  source ${CONDA_PREFIX}/bin/activate ${CONDA_LOCALENVNAME}
 fi
-
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# completions and suggestions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  autoload -Uz compinit && compinit
+fi
 
 # fzf
 export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit-0 --multi'
-
-#if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#	exec startx
-#fi
-
-# tmux
-# if ! [[ -n $TMUX && $- == *l* ]]; then
-#	ID="`tmux list-sessions`"
-#	if [[ -z "$ID" ]]; then
-#		tmux new-session
-#	else
-#		create_new_session="Create New Session"
-#		ID="$ID\n${create_new_session}:"
-#		ID="`echo $ID | fzf --select-1 | cut -d: -f1`"
-#		if [[ "$ID" = "${create_new_session}" ]]; then
-#			tmux new-session
-#		elif [[ -n "$ID" ]]; then
-#			tmux attach-session -t "$ID"
-#		fi
-#	fi
-# fi
-
