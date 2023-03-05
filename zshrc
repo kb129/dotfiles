@@ -35,6 +35,7 @@ fi
 # completions and suggestions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   autoload -Uz compinit && compinit
 fi
