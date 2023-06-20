@@ -1,0 +1,9 @@
+separator_block_width=16
+
+[updates]
+command=./check-updates.sh
+interval=3600
+
+[time]
+command=date '+%y/%m/%d %H:%M:%S'
+interval=1
