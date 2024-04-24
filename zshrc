@@ -1,7 +1,6 @@
 #
 # Executes commands at the start of an interactive session.
 #
-
 # PATH settings
 typeset -U path PATH
 path=(
@@ -15,8 +14,12 @@ path=(
   /usr/local/sbin(N-/) # Local system binaries
   $HOME/.nodebrew/current/bin(N-/) # Nodebrew executables
 )
+# start GUI if login shell
+if [[ -o login ]]
+then
+  startx
+fi
 
-# Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -27,11 +30,9 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # conda
-CONDA_PREFIX=${HOME}/dev/conda
-CONDA_LOCALENVNAME=${CONDA_PREFIX}/envs/$(hostname -s)
-if command -v conda >/dev/null 2>&1 && [ -d ${CONDA_LOCALENVNAME} ]; then
-  source ${CONDA_PREFIX}/bin/activate ${CONDA_LOCALENVNAME}
-fi
+CONDA_PREFIX=/opt/miniconda3
+CONDA_LOCALENVNAME=$HOME/.conda/envs/$(hostname -s)310
+source ${CONDA_PREFIX}/bin/activate ${CONDA_LOCALENVNAME}
 
 # completions and suggestions
 if type brew >/dev/null 2>&1; then
@@ -47,3 +48,8 @@ fi
 
 # fzf
 export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit-0 --multi'
+
+# others
+export EDITOR=vim
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DOWNLOAD_DIR=$HOME/Downloads
