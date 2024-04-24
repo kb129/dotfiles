@@ -1,0 +1,11 @@
+[selection]
+save_to_clipboard=true
+
+
+[cursor.style]
+shape="Block"
+blinking="On"
+
+[cursor]
+blink_interval=333
+
