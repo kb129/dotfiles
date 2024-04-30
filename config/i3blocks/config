@@ -1,7 +1,7 @@
 separator_block_width=16
 
 [updates]
-command=./check-updates.sh
+command=if [ $button ]; then alacritty -e paru; fi;./check-updates.sh
 interval=3600
 
 [date]
