@@ -24,8 +24,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 floating_modifier $mod
 tiling_drag modifier titlebar
-bindsym $mod+d exec rofi -show drun 
-bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
 set $ws1 "1"
 set $ws2 "2"
@@ -68,7 +68,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bar {
-        status_command i3status
+        status_command i3blocks
         position bottom
         tray_output primary
 }
