@@ -7,6 +7,7 @@ ln -s $ROOT/bash_profile $HOME/.bash_profile
 ln -s $ROOT/bashrc $HOME/.bashrc
 ln -s $ROOT/aliases $HOME/.bash_aliases
 ln -s $ROOT/tmux.conf $HOME/.tmux.conf
+ln -s $ROOT/screenrc $HOME/.screenrc
 ln -s $ROOT/vimrc $HOME/.vimrc
 ln -s $ROOT/zshrc $HOME/.zshrc
 ln -s $ROOT/aliases $HOME/.zsh_aliases
