@@ -13,6 +13,7 @@ path=(
   /usr/local/bin(N-/) # Local executables
   /usr/local/sbin(N-/) # Local system binaries
   $HOME/.nodebrew/current/bin(N-/) # Nodebrew executables
+  $HOME/.go/bin
 )
 # start GUI if login shell
 if [[ -o login ]]
@@ -33,6 +34,9 @@ fi
 CONDA_PREFIX=/opt/miniconda3
 CONDA_LOCALENVNAME=$HOME/.conda/envs/$(hostname -s)310
 source ${CONDA_PREFIX}/bin/activate ${CONDA_LOCALENVNAME}
+
+# go
+export GOPATH=$HOME/.go
 
 # completions and suggestions
 if type brew >/dev/null 2>&1; then
