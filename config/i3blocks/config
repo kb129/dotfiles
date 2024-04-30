@@ -5,7 +5,7 @@ command=./check-updates.sh
 interval=3600
 
 [date]
-command=if [ $button ]; then notify-send "`jpcal`"; fi; date '+%b %d, %Y'
+command=if [ $button ]; then notify-send "`cal`"; fi; date '+%b %d, %Y'
 interval=1
 
 [time]
