@@ -27,6 +27,7 @@ tiling_drag modifier titlebar
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+Shift+q kill
+bindcode 124 exec $HOME/.config/i3/shutdown_menu.sh
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"

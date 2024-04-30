@@ -7,6 +7,7 @@ if [ ! -d $HOME/.config/i3 ]; then
     mkdir $HOME/.config/i3
 fi
 ln -s $ROOT/config/i3/config $HOME/.config/i3/config
+ln -s $ROOT/config/i3/shutdown_menu.sh $HOME/.config/i3/shutdown_menu.sh
 if [ ! -d $HOME/.config/i3blocks ]; then
     mkdir $HOME/.config/i3blocks
 fi
