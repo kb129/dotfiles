@@ -14,12 +14,15 @@ path=(
   /usr/local/sbin(N-/) # Local system binaries
   $HOME/.nodebrew/current/bin(N-/) # Nodebrew executables
   $HOME/.go/bin
+  /home/linuxbrew/.linuxbrew/bin
+  /home/linuxbrew/.linuxbrew/sbin
 )
-# start GUI if login shell
-if [[ -o login ]]
-then
-  startx
+
+# brewfile
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
 fi
+
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -32,8 +35,7 @@ fi
 
 # conda
 CONDA_PREFIX=/opt/miniconda3
-CONDA_LOCALENVNAME=$HOME/.conda/envs/$(hostname -s)310
-source ${CONDA_PREFIX}/bin/activate ${CONDA_LOCALENVNAME}
+source ${CONDA_PREFIX}/bin/activate 
 
 # go
 export GOPATH=$HOME/.go
