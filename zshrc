@@ -32,18 +32,20 @@ fi
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
+# secret (API keys, etc.)
+# This file should not be tracked by git, and should contain sensitive information.
 if [ -f $HOME/.zsh_secret ];then
     source $HOME/.zsh_secret
 fi
 
-# conda
-CONDA_PREFIX=/opt/miniconda3
-source ${CONDA_PREFIX}/bin/activate 
-
+# conda or miniconda
+if [ -f $HOME/.zsh_conda ]; then
+    source $HOME/.zsh_conda
+fi
 # go
 export GOPATH=$HOME/.go
 
-# completions and suggestions
+# brew
 if type brew >/dev/null 2>&1; then
   # Add Homebrew completions to FPATH
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -60,5 +62,3 @@ export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit
 
 # others
 export EDITOR=vim
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DOWNLOAD_DIR=$HOME/Downloads

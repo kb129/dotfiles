@@ -17,4 +17,5 @@ ln -s $ROOT/zpreztorc $HOME/.zpreztorc
 ln -s $ROOT/zprofile $HOME/.zprofile
 ln -s $ROOT/zshenv $HOME/.zshenv
 ln -s $ROOT/screenrc $HOME/.screenrc
-
+cp $ROOT/zsh_conda.example $HOME/.zsh_conda
+cp $ROOT/zsh_secret.example $HOME/.zsh_secret

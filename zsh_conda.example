@@ -1,0 +1,2 @@
+CONDA_PREFIX=/opt/miniconda3
+source ${CONDA_PREFIX}/bin/activate 
