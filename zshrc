@@ -25,6 +25,9 @@ fi
 if [ -f $HOME/.zsh_aliases ];then
     source $HOME/.zsh_aliases
 fi
+if [ -f $HOME/.zsh_secret ];then
+    source $HOME/.zsh_secret
+fi
 
 # conda
 CONDA_PREFIX=${HOME}/dev/conda

@@ -20,7 +20,7 @@ set hidden
 set showcmd
 
 syntax on
-" 良かったもの
+" theme
 colorscheme twilight
 
 
@@ -36,7 +36,7 @@ set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
 " ビープ音を可視化
-set visualbell
+set visualbell t_vb=
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
@@ -46,7 +46,6 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
 
 " Tab系
 " 不可視文字を可視化(タブが「?-」と表示される)
