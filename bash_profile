@@ -1,4 +1,4 @@
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
+# Load .zsh_conda
+if [ -f ~/.zsh_conda ]; then
+    source ~/.zsh_conda
 fi
-export PATH=$HOME/.nodebrew/current/bin:$PATH
