@@ -18,12 +18,7 @@ path=(
   /home/linuxbrew/.linuxbrew/sbin
 )
 
-# brewfile
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
-
-
+# prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -32,8 +27,8 @@ fi
 if [ -f $HOME/.zsh_aliases ]; then
     source $HOME/.zsh_aliases
 fi
+
 # secret (API keys, etc.)
-# This file should not be tracked by git, and should contain sensitive information.
 if [ -f $HOME/.zsh_secret ];then
     source $HOME/.zsh_secret
 fi
@@ -42,10 +37,17 @@ fi
 if [ -f $HOME/.zsh_conda ]; then
     source $HOME/.zsh_conda
 fi
+
 # go
 export GOPATH=$HOME/.go
 
 # brew
+if [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
 if type brew >/dev/null 2>&1; then
   # Add Homebrew completions to FPATH
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH

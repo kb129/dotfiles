@@ -19,3 +19,8 @@ ln -s $ROOT/zshenv $HOME/.zshenv
 ln -s $ROOT/screenrc $HOME/.screenrc
 cp $ROOT/zsh_conda.example $HOME/.zsh_conda
 cp $ROOT/zsh_secret.example $HOME/.zsh_secret
+# homebrew, if macOS
+if [ -d /usr/local/Homebrew ]; then
+    ln -s $ROOT/Brewfile $HOME/.Brewfile
+    brew bundle --global
+fi
