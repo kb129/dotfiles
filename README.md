@@ -32,7 +32,7 @@ $ ./uninstall.sh
 ## Brewfile
 
 ```plaintext
-brew bundle --global
+$ brew bundle --global
 ```
 
 ## Available dotfiles
