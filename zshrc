@@ -64,3 +64,5 @@ export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit
 
 # others
 export EDITOR=vim
+
+RPROMPT='$(git config user.name 2>/dev/null)'
