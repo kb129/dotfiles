@@ -8,6 +8,7 @@ brew "git"
 brew "vim"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
+brew "conda-zsh-completion"
 if OS.mac?
   cask "alfred"
   cask "google-chrome"
