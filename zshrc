@@ -3,9 +3,19 @@
 #
 # PATH settings
 typeset -U path PATH
+
+# Set the HOMEBREW_PREFIX based on the system architecture
+if [ -d /opt/homebrew ]; then
+  HOMEBREW_PREFIX=/opt/homebrew
+elif [ -d $HOME/homebrew ]; then
+  HOMEBREW_PREFIX=$HOME/homebrew
+else
+  HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+fi
+
 path=(
-  ${HOMEBREW_PREFIX}/bin(N-/) # Homebrew executables
-  ${HOMEBREW_PREFIX}/sbin(N-/) # Homebrew system binaries
+  $HOMEBREW_PREFIX/bin(N-/) # Homebrew executables
+  $HOMEBREW_PREFIX/sbin(N-/) # Homebrew system binaries
   /usr/bin # System executables
   /usr/sbin # System system binaries
   /bin # Essential executables
