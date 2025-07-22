@@ -13,3 +13,4 @@ unlink $HOME/.zpreztorc
 unlink $HOME/.zprofile
 unlink $HOME/.zshenv
 rm -rf $HOME/.zprezto
+unlink $HOME/.screenrc
