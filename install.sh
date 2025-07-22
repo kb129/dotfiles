@@ -1,4 +1,5 @@
 ROOT=$(cd $(dirname $0); pwd)
+
 cp -r $ROOT/vim $HOME/.vim
 mkdir -p $HOME/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
@@ -17,8 +18,6 @@ ln -s $ROOT/zpreztorc $HOME/.zpreztorc
 ln -s $ROOT/zprofile $HOME/.zprofile
 ln -s $ROOT/zshenv $HOME/.zshenv
 ln -s $ROOT/screenrc $HOME/.screenrc
-cp $ROOT/zsh_conda.example $HOME/.zsh_conda
-cp $ROOT/zsh_secret.example $HOME/.zsh_secret
 # homebrew, if macOS
 if [ -d /usr/local/Homebrew ]; then
     ln -s $ROOT/Brewfile $HOME/.Brewfile
