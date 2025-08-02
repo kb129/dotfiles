@@ -15,8 +15,6 @@ ln -s $ROOT/aliases $HOME/.zsh_aliases
 ln -s $ROOT/zlogin $HOME/.zlogin
 ln -s $ROOT/zlogout $HOME/.zlogout
 ln -s $ROOT/zpreztorc $HOME/.zpreztorc
-ln -s $ROOT/zprofile $HOME/.zprofile
-ln -s $ROOT/zshenv $HOME/.zshenv
 ln -s $ROOT/screenrc $HOME/.screenrc
 # homebrew, if macOS
 if [ -d /usr/local/Homebrew ]; then
