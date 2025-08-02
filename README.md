@@ -1,6 +1,6 @@
-# linux_dotfiles
+# Dotfiles
 
-My dotfiles for linux
+My dotfiles
 
 ## Install
 
@@ -48,3 +48,4 @@ This repository includes the dotfiles or setting files for...
 - `brew`
 - `Terminal` for MacOS
 - `Rectangle` will be installed via `brew bundle` for MacOS
+- `i3wm` for linux
