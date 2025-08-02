@@ -23,9 +23,9 @@ path=(
   /usr/local/bin(N-/) # Local executables
   /usr/local/sbin(N-/) # Local system binaries
   $HOME/.nodebrew/current/bin(N-/) # Nodebrew executables
-  $HOME/.go/bin
-  /home/linuxbrew/.linuxbrew/bin
-  /home/linuxbrew/.linuxbrew/sbin
+  $HOME/.go/bin(N-/) # Go executables
+  /home/linuxbrew/.linuxbrew/bin(N-/) # Linuxbrew executables
+  /home/linuxbrew/.linuxbrew/sbin(N-/) # Linuxbrew system binaries
 )
 
 # prezto
@@ -76,3 +76,9 @@ export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit
 export EDITOR=vim
 
 RPROMPT='$(git config user.name 2>/dev/null)'
+
+
+# node, npm, nvm, and nodebrew
+if [ -f $HOME/.zsh_node ]; then
+    source $HOME/.zsh_node
+fi
