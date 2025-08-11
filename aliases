@@ -1,0 +1,27 @@
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ll='ls -l'
+alias la='ls -aF'
+alias lal='ls -la'
+alias sc='screen -D -RR'
+alias sls='screen -ls'
+alias ta='tmux a'
+alias lv='lv -Ou8'
+# git aliases
+alias g='git'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+alias gst='git status'
+alias gl='git pull'
+alias gp='git push'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -F- << EOM'
+alias gf='git fetch'
+alias cdd='cd $(ghq root)/$(ghq list | fzf)'
+
+alias slnotify='python $(ghq root)/github.com/kb129/slack_notify/notify.py "(from `hostname`)"'
+
+

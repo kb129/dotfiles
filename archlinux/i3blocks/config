@@ -1,0 +1,13 @@
+separator_block_width=16
+
+[updates]
+command=if [ $button ]; then alacritty -e paru; fi;./check-updates.sh
+interval=3600
+
+[date]
+command=if [ $button ]; then notify-send "`cal`"; fi; date '+%b %d, %Y'
+interval=1
+
+[time]
+command=date '+%H:%M:%S'
+interval=1
