@@ -18,6 +18,6 @@ ln -s $ROOT/zpreztorc $HOME/.zpreztorc
 ln -s $ROOT/screenrc $HOME/.screenrc
 # homebrew, if macOS
 if [ "$(uname)" = "Darwin" ]; then
-    ln -s $ROOT/Brewfile $HOME/.Brewfile
+    ln -s $ROOT/macos/Brewfile $HOME/.Brewfile
     brew bundle --global
 fi
