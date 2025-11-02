@@ -71,6 +71,10 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+if has("mac")
+  set rtp+=/opt/homebrew/opt/fzf
+endif
+
 
 set whichwrap=b,s,h,l,<,>,[,],~
 
