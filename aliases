@@ -13,6 +13,8 @@ alias ta='tmux a'
 alias tat='tmux a -t'
 alias tn='tmux new -s'
 alias lv='lv -Ou8'
+alias vim=nvim
+alias vi=nvim
 # git aliases
 alias g='git'
 alias gd='git diff'
