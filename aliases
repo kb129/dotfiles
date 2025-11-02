@@ -4,9 +4,14 @@ alias mv='mv -i'
 alias ll='ls -l'
 alias la='ls -aF'
 alias lal='ls -la'
+# screen
 alias sc='screen -D -RR'
 alias sls='screen -ls'
+# tmux
+alias tls='tmux ls'
 alias ta='tmux a'
+alias tat='tmux a -t'
+alias tn='tmux new -s'
 alias lv='lv -Ou8'
 # git aliases
 alias g='git'
@@ -21,7 +26,19 @@ alias gc='git commit'
 alias gcm='git commit -F- << EOM'
 alias gf='git fetch'
 alias cdd='cd $(ghq root)/$(ghq list | fzf)'
+tm() {
+  if [ -n "$TMUX" ]; then
+    echo "Already in tmux ($TMUX)"
+    return
+  fi
 
-alias slnotify='python $(ghq root)/github.com/kb129/slack_notify/notify.py "(from `hostname`)"'
-
-
+  local name=${1:-main}
+  if tmux has-session -t "$name" 2>/dev/null; then
+    echo "🔗 Attaching to $name"
+    tmux attach -t "$name"
+  else
+    echo "✨ Creating new session $name"
+    tmux new -s "$name"
+  fi
+}
+alias t=tm
