@@ -5,12 +5,15 @@ unlink $HOME/.bash_aliases
 unlink $HOME/.tmux.conf
 rm -rf $HOME/.vim
 unlink $HOME/.vimrc
+rm -rf $HOME/.config/nvim
 unlink $HOME/.zshrc
 unlink $HOME/.zsh_aliases
 unlink $HOME/.zlogin
 unlink $HOME/.zlogout
 unlink $HOME/.zpreztorc
-unlink $HOME/.zprofile
-unlink $HOME/.zshenv
 rm -rf $HOME/.zprezto
 unlink $HOME/.screenrc
+if [ "$(uname)" = "Darwin" ]; then
+    unlink $HOME/.Brewfile
+    unlink $HOME/.config/ghostty/config
+fi
