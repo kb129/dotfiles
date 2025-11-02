@@ -10,7 +10,7 @@ ln -s $ROOT/aliases $HOME/.bash_aliases
 ln -s $ROOT/tmux.conf $HOME/.tmux.conf
 ln -s $ROOT/screenrc $HOME/.screenrc
 ln -s $ROOT/vimrc $HOME/.vimrc
-ln -s $ROOT/nvim $HOME/.config/nvim
+ln -s $ROOT/nvim $HOME/.config/
 ln -s $ROOT/zshrc $HOME/.zshrc
 ln -s $ROOT/aliases $HOME/.zsh_aliases
 ln -s $ROOT/zlogin $HOME/.zlogin
@@ -21,4 +21,5 @@ ln -s $ROOT/screenrc $HOME/.screenrc
 if [ "$(uname)" = "Darwin" ]; then
     ln -s $ROOT/macos/Brewfile $HOME/.Brewfile
     brew bundle --global
+    ln -s $ROOT/macos/ghostty.config $HOME/.config/ghostty/config
 fi
