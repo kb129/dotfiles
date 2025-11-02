@@ -26,6 +26,7 @@ path=(
   $HOME/.go/bin(N-/) # Go executables
   /home/linuxbrew/.linuxbrew/bin(N-/) # Linuxbrew executables
   /home/linuxbrew/.linuxbrew/sbin(N-/) # Linuxbrew system binaries
+  /opt/homebrew/bin/node(N-/)
 )
 
 # prezto
