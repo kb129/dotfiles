@@ -3,8 +3,6 @@ unlink $HOME/.bash_profile
 unlink $HOME/.bashrc
 unlink $HOME/.bash_aliases
 unlink $HOME/.tmux.conf
-rm -rf $HOME/.vim
-unlink $HOME/.vimrc
 rm -rf $HOME/.config/nvim
 unlink $HOME/.zshrc
 unlink $HOME/.zsh_aliases
