@@ -22,4 +22,5 @@ if OS.mac?
   cask "microsoft-remote-desktop"
   cask "notion"
   cask "slack"
+  cask "ghostty"
 end
