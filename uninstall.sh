@@ -1,4 +1,7 @@
-ROOT=$(cd $(dirname $0); pwd)
+ROOT=$(
+  cd $(dirname $0)
+  pwd
+)
 unlink $HOME/.bash_profile
 unlink $HOME/.bashrc
 unlink $HOME/.bash_aliases
@@ -12,6 +15,6 @@ unlink $HOME/.zpreztorc
 rm -rf $HOME/.zprezto
 unlink $HOME/.screenrc
 if [ "$(uname)" = "Darwin" ]; then
-    unlink $HOME/.Brewfile
-    unlink $HOME/.config/ghostty/config
+  unlink $HOME/.Brewfile
+  unlink $HOME/.config/ghostty/config
 fi

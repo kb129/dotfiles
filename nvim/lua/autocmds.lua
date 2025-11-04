@@ -1,23 +1,73 @@
-local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
-local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
-local grp = augroup("TabsToSpacesOnWrite", { clear = true })
+local function exe(cmd)
+    return vim.fn.executable(cmd) == 1
+end
 
-autocmd("BufWritePre", {
-    group = grp,
+local function filter_with_view(cmdline, not_found_msg)
+    local cmd = vim.split(cmdline, "%s+")[1]:gsub("%%!", "")
+    if not exe(cmd) then
+        vim.notify(not_found_msg, vim.log.levels.ERROR)
+        return
+    end
+
+    local view = vim.fn.winsaveview()
+
+    local ok, err = pcall(function()
+        vim.cmd("silent keepjumps keepalt " .. cmdline)
+    end)
+
+    vim.fn.winrestview(view)
+
+    if not ok then
+        vim.notify("Format error: " .. tostring(err), vim.log.levels.ERROR)
+    end
+end
+
+-- formatters on save
+-- python
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.py",
+    callback = function()
+        filter_with_view([[%!black --quiet -]], [[Error: 'black' not found. Install with: pip install black]])
+    end,
+})
+
+-- shell
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.sh", "*.bash", "*.zsh" },
+    callback = function()
+        filter_with_view(
+            [[%!shfmt -i 2 -ci -bn -]],
+            [[Error: 'shfmt' not found. Install with: brew install shfmt (or your pkg manager)]]
+        )
+    end,
+})
+
+-- lua
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.lua",
+    callback = function()
+        filter_with_view(
+            [[%!stylua -]],
+            [[Error: 'stylua' not found. Install with: brew install stylua (or your pkg manager)]]
+        )
+    end,
+})
+
+-- replace tabs with spaces on save
+vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
-    callback = function(args)
-        local bufnr = args.buf
-        if vim.bo[bufnr].filetype == "make" then return end
-        if vim.bo[bufnr].buftype ~= "" then return end
-        if vim.fn.search("\\t", "nw") == 0 then return end
-        local prev_expandtab = vim.bo[bufnr].expandtab
-        local prev_tabstop   = vim.bo[bufnr].tabstop
+    callback = function()
+        local view = vim.fn.winsaveview()
+        vim.cmd([[silent! %s/\t/    /g ]])
 
-        vim.bo[bufnr].expandtab = true
-        vim.bo[bufnr].tabstop   = 4
-        vim.cmd("silent keepjumps keepmarks %retab")
+        vim.fn.winrestview(view)
+    end,
+})
 
-        vim.bo[bufnr].expandtab = prev_expandtab
-        vim.bo[bufnr].tabstop   = prev_tabstop
+-- no comment lines at new lines
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        vim.cmd([[ setlocal formatoptions-=c formatoptions-=r formatoptions-=o ]])
     end,
 })
