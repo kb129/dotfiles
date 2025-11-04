@@ -11,6 +11,7 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "marp-cli"
 brew "conda-zsh-completion"
+brew "eza"
 if OS.mac?
   cask "raycast"
   cask "google-chrome"
