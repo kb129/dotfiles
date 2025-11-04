@@ -18,5 +18,8 @@ ln -s $ROOT/screenrc $HOME/.screenrc
 if [ "$(uname)" = "Darwin" ]; then
     ln -s $ROOT/macos/Brewfile $HOME/.Brewfile
     brew bundle --global
+    if [ ! -d "$HOME/.config/ghostty" ]; then
+        mkdir $HOME/.config/ghostty
+    fi
     ln -s $ROOT/macos/ghostty.config $HOME/.config/ghostty/config
 fi

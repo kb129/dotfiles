@@ -1,6 +1,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ls='eza --icons --group-directories-first'
 alias ll='ls -l'
 alias la='ls -aF'
 alias lal='ls -la'
