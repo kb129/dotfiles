@@ -1,9 +1,9 @@
 require("base")
 require("autocmds")
 require("options")
-require("keymaps")
 require("colorscheme")
 require("plugins")
+require("keymaps")
 -- Plugin configurations
 require("oil").setup({
     default_file_explorer = true,
