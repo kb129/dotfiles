@@ -6,6 +6,9 @@ ln -s $ROOT/bashrc $HOME/.bashrc
 ln -s $ROOT/aliases $HOME/.bash_aliases
 ln -s $ROOT/tmux.conf $HOME/.tmux.conf
 ln -s $ROOT/screenrc $HOME/.screenrc
+if [ ! -d "$HOME/.config/nvim" ]; then
+	mkdir -p $HOME/.config/nvim
+fi
 ln -s $ROOT/nvim/init.lua $HOME/.config/nvim/init.lua
 ln -s $ROOT/nvim/lua/ $HOME/.config/nvim/
 ln -s $ROOT/zshrc $HOME/.zshrc

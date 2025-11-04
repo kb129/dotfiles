@@ -12,6 +12,7 @@ brew "zsh-completions"
 brew "marp-cli"
 brew "conda-zsh-completion"
 brew "eza"
+brew "tmux"
 if OS.mac?
   cask "raycast"
   cask "google-chrome"

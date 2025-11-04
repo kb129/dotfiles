@@ -84,8 +84,11 @@ return packer.startup(function(use)
 
 	use({ "windwp/nvim-ts-autotag" })
 
-  -- filer
-  use({ "stevearc/oil.nvim" })
+    -- filer
+    use({ "stevearc/oil.nvim" })
+
+    -- Copilot
+    use({ "github/copilot.vim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
