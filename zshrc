@@ -49,6 +49,11 @@ if [ -f $HOME/.zsh_conda ]; then
     source $HOME/.zsh_conda
 fi
 
+# node, npm, nvm, and nodebrew
+if [ -f $HOME/.zsh_node ]; then
+    source $HOME/.zsh_node
+fi
+
 # go
 export GOPATH=$HOME/.go
 
@@ -79,7 +84,3 @@ export EDITOR=vim
 RPROMPT='$(git config user.name 2>/dev/null)'
 
 
-# node, npm, nvm, and nodebrew
-if [ -f $HOME/.zsh_node ]; then
-    source $HOME/.zsh_node
-fi
