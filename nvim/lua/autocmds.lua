@@ -71,3 +71,18 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.cmd([[ setlocal formatoptions-=c formatoptions-=r formatoptions-=o ]])
     end,
 })
+
+-- make dir if not exists on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function(event)
+        local file = event.match or vim.fn.expand("<afile>")
+        local dir = vim.fn.fnamemodify(file, ":h")
+        if vim.fn.isdirectory(dir) == 0 then
+            vim.fn.mkdir(dir, "p")
+        end
+    end,
+})
+
+-- check for external file changes
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
