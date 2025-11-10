@@ -57,6 +57,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function()
+        -- Makefileはタブが必須なので除外
+        if vim.bo.filetype == "make" then
+            return
+        end
+
         local view = vim.fn.winsaveview()
         vim.cmd([[silent! %s/\t/    /g ]])
 
@@ -86,3 +91,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- check for external file changes
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
+
+-- Makefile用設定：タブを保持
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "make",
+    callback = function()
+        vim.opt_local.expandtab = false
+        vim.opt_local.tabstop = 4
+        vim.opt_local.shiftwidth = 4
+    end,
+})
