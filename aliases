@@ -37,10 +37,8 @@ tm() {
 
   local name=${1:-main}
   if tmux has-session -t "$name" 2>/dev/null; then
-    echo "🔗 Attaching to $name"
     tmux attach -t "$name"
   else
-    echo "✨ Creating new session $name"
     tmux new -s "$name"
   fi
 }
