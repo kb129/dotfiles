@@ -18,3 +18,7 @@ end, { desc = "Toggle comment" })
 
 -- disable space cursor movement
 vim.keymap.set({ "n", "x", "o" }, "<Space>", "<Nop>", { silent = true, desc = "Disable space cursor movement" })
+
+-- start of line with Ctrl+a, and end of line with Ctrl+e
+vim.keymap.set({ "n", "i", "c" }, "<C-a>", "<Home>", { desc = "Move to start of line" })
+vim.keymap.set({ "n", "i", "c" }, "<C-e>", "<End>", { desc = "Move to end of line" })
