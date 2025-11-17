@@ -20,4 +20,12 @@ require("oil").setup({
             winblend = 10,
         },
     },
+    keymaps = {
+        ["<C-h>"] = "actions.parent",
+        ["<leader>|"] = "actions.select_vsplit",
+        ["<leader>-"] = "actions.select_split",
+        ["<leader>t"] = "actions.select_tab",
+        ["<C-r>"] = "actions.refresh",
+        ["q"] = "actions.close",
+    },
 })

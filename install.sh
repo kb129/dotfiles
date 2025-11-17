@@ -20,6 +20,7 @@ ln -s $ROOT/zlogin $HOME/.zlogin
 ln -s $ROOT/zlogout $HOME/.zlogout
 ln -s $ROOT/zpreztorc $HOME/.zpreztorc
 ln -s $ROOT/screenrc $HOME/.screenrc
+ln -s $ROOT/matplotlibrc $HOME/.config/matplotlib/matplotlibrc
 # homebrew
 if [ ! -d "/usr/local/bin/brew" ] && [ ! -d "/opt/homebrew/bin/brew" ]; then
   ln -s $ROOT/macos/Brewfile $HOME/.Brewfile
