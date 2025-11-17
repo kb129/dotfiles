@@ -9,7 +9,7 @@ end, { expr = true, desc = "0 => first non-blank (keep count)" })
 vim.keymap.set({ "n", "x", "o" }, "<leader>0", "0", { desc = "Go to absolute line start" })
 
 -- comment toggle
-vim.keymap.set("n", "<leader>/", function()
+vim.keymap.set({ "n", "i" }, "<leader>/", function()
     require("Comment.api").toggle.linewise.current()
 end, { desc = "Toggle comment" })
 vim.keymap.set("x", "<leader>/", function()
@@ -22,3 +22,6 @@ vim.keymap.set({ "n", "x", "o" }, "<Space>", "<Nop>", { silent = true, desc = "D
 -- start of line with Ctrl+a, and end of line with Ctrl+e
 vim.keymap.set({ "n", "i", "c" }, "<C-a>", "<Home>", { desc = "Move to start of line" })
 vim.keymap.set({ "n", "i", "c" }, "<C-e>", "<End>", { desc = "Move to end of line" })
+
+-- type jj to exit insert mode
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
