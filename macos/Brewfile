@@ -12,6 +12,7 @@ brew "conda-zsh-completion"
 brew "eza"
 brew "tmux"
 brew "stylua"
+brew "claude-code"
 if OS.mac?
     brew "watch"
     cask "raycast"

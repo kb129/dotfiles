@@ -27,6 +27,7 @@ path=(
   /home/linuxbrew/.linuxbrew/bin(N-/) # Linuxbrew executables
   /home/linuxbrew/.linuxbrew/sbin(N-/) # Linuxbrew system binaries
   /opt/homebrew/bin/node(N-/)
+  `git config --get ghq.root`/github.com/coderabbitai/git-worktree-runner/bin(N-/)
 )
 
 # prezto
