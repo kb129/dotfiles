@@ -27,7 +27,6 @@ path=(
   /home/linuxbrew/.linuxbrew/bin(N-/) # Linuxbrew executables
   /home/linuxbrew/.linuxbrew/sbin(N-/) # Linuxbrew system binaries
   /opt/homebrew/bin/node(N-/)
-  `git config --get ghq.root`/github.com/coderabbitai/git-worktree-runner/bin(N-/)
 )
 
 # prezto
@@ -76,12 +75,15 @@ if type brew >/dev/null 2>&1; then
   autoload -Uz compinit && compinit
 fi
 
+# if docker exists, add docker completions
+if type docker >/dev/null 2>&1; then
+  fpath=($HOME/.docker/completions $fpath)
+  autoload -Uz compinit
+  compinit
+fi
+
 # fzf
 export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit-0 --multi'
 
 # others
 export EDITOR=vim
-
-RPROMPT='$(git config user.name 2>/dev/null)'
-
-

@@ -13,6 +13,7 @@ brew "eza"
 brew "tmux"
 brew "stylua"
 brew "claude-code"
+brew "docker"
 if OS.mac?
     brew "watch"
     cask "raycast"
