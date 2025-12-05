@@ -44,11 +44,6 @@ if [ -f $HOME/.zsh_secret ];then
     source $HOME/.zsh_secret
 fi
 
-# conda or miniconda
-if [ -f $HOME/.zsh_conda ]; then
-    source $HOME/.zsh_conda
-fi
-
 # node, npm, nvm, and nodebrew
 if [ -f $HOME/.zsh_node ]; then
     source $HOME/.zsh_node
