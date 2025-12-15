@@ -77,6 +77,9 @@ if type docker >/dev/null 2>&1; then
   compinit
 fi
 
+# homebrew
+export HOMEBREW_AUTO_UPDATE_SECS='86400'
+
 # fzf
 export FZF_DEFAULT_OPTS='--color=fg+:11 --height 70% --reverse --select-1 --exit-0 --multi'
 
