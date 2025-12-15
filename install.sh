@@ -27,8 +27,14 @@ if [ ! -d "/usr/local/bin/brew" ] && [ ! -d "/opt/homebrew/bin/brew" ]; then
   brew bundle --global
 fi
 if [ "$(uname)" = "Darwin" ]; then
+  # ghostty
   if [ ! -d "$HOME/.config/ghostty" ]; then
     mkdir $HOME/.config/ghostty
   fi
   ln -s $ROOT/macos/ghostty.config $HOME/.config/ghostty/config
+    # Rectangle
+    if [ ! -d "$HOME/Library/Application\ Support/Rectangle" ]; then
+      mkdir -p "$HOME/Library/Application Support/Rectangle"
+    fi
+    ln -s $ROOT/macos/rectangle.json "$HOME/Library/Application Support/Rectangle/rectangle.json"
 fi
