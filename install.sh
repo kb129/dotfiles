@@ -37,4 +37,8 @@ if [ "$(uname)" = "Darwin" ]; then
     mkdir -p "$HOME/Library/Application Support/Rectangle"
   fi
   ln -s $ROOT/macos/rectangle.json "$HOME/Library/Application Support/Rectangle/rectangle.json"
+  if [ ! -d "$HOME/.config/karabiner/assets/complex_modifications" ]; then
+    mkdir -p "$HOME/.config/karabiner/assets/complex_modifications"
+  fi
+  ln -s $ROOT/macos/karabiner.json "$HOME/.config/karabiner/assets/complex_modifications/karabiner.json"
 fi
