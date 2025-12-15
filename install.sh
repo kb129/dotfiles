@@ -32,9 +32,9 @@ if [ "$(uname)" = "Darwin" ]; then
     mkdir $HOME/.config/ghostty
   fi
   ln -s $ROOT/macos/ghostty.config $HOME/.config/ghostty/config
-    # Rectangle
-    if [ ! -d "$HOME/Library/Application\ Support/Rectangle" ]; then
-      mkdir -p "$HOME/Library/Application Support/Rectangle"
-    fi
-    ln -s $ROOT/macos/rectangle.json "$HOME/Library/Application Support/Rectangle/rectangle.json"
+  # Rectangle
+  if [ ! -d "$HOME/Library/Application\ Support/Rectangle" ]; then
+    mkdir -p "$HOME/Library/Application Support/Rectangle"
+  fi
+  ln -s $ROOT/macos/rectangle.json "$HOME/Library/Application Support/Rectangle/rectangle.json"
 fi
