@@ -11,10 +11,15 @@ brew "marp-cli"
 brew "conda-zsh-completion"
 brew "eza"
 brew "tmux"
-brew "stylua"
 brew "docker"
+# formatters
+brew "tidy-html5"
 brew "shfmt"
+brew "stylua"
+brew "black"
 if OS.mac?
+    brew "laishulu/homebrew"
+    brew "macism"
     cask "claude-code"
     brew "watch"
     cask "raycast"
@@ -29,4 +34,5 @@ if OS.mac?
     cask "notion"
     cask "slack"
     cask "ghostty"
+    cask "karabiner-elements"
 end

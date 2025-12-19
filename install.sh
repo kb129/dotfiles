@@ -40,5 +40,5 @@ if [ "$(uname)" = "Darwin" ]; then
   if [ ! -d "$HOME/.config/karabiner/assets/complex_modifications" ]; then
     mkdir -p "$HOME/.config/karabiner/assets/complex_modifications"
   fi
-  ln -s $ROOT/macos/karabiner.json "$HOME/.config/karabiner/assets/complex_modifications/karabiner.json"
+  ln -s $ROOT/macos/karabiner/ctrl_hl_arrow.json "$HOME/.config/karabiner/assets/complex_modifications/ctrl_hl_arrow.json"
 fi

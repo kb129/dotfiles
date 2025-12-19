@@ -30,7 +30,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         filter_with_view([[%!black --quiet -]], [[Error: 'black' not found. Install with: pip install black]])
     end,
 })
-
 -- shell
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = { "*.sh", "*.bash", "*.zsh" },
@@ -41,7 +40,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         )
     end,
 })
-
 -- lua
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.lua",
@@ -49,6 +47,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         filter_with_view(
             [[%!stylua -]],
             [[Error: 'stylua' not found. Install with: brew install stylua (or your pkg manager)]]
+        )
+    end,
+})
+-- html, css, js, json
+-- html
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.html", "*.htm" },
+    callback = function()
+        filter_with_view(
+            [[%!tidy -q -i --indent-spaces 2 --wrap 0]],
+            [[Error: 'tidy' not found. Install with: brew install tidy-html5 (or your pkg manager)]]
         )
     end,
 })
