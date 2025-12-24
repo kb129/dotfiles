@@ -1,3 +1,4 @@
+tap "homebrew/autoupdate"
 brew "cmake"
 brew "coreutils"
 brew "fzf"

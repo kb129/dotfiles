@@ -110,3 +110,25 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.shiftwidth = 4
     end,
 })
+
+local group = vim.api.nvim_create_augroup("AutoRead", { clear = true })
+
+-- Check file changes when returning to Neovim or entering a buffer
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "TermClose" }, {
+    group = group,
+    callback = function()
+        -- Only check for changes if we can safely do so
+        -- (checktime itself is safe; unsaved buffers won't be auto-reloaded)
+        vim.cmd("checktime")
+    end,
+})
+
+-- Notify after a file was reloaded because it changed outside Neovim
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+    group = group,
+    callback = function(args)
+        -- args.file: changed file path (may be empty depending on situation)
+        local name = args.file ~= "" and vim.fn.fnamemodify(args.file, ":~:.") or "current buffer"
+        vim.notify(("Reloaded: %s (changed outside)"):format(name), vim.log.levels.INFO)
+    end,
+})

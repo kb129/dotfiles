@@ -43,6 +43,8 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.undofile = true -- 永続 undo
 
+vim.opt.autoread = true -- 外部で変更されたファイルを自動読み込み
+
 -----------------------------------------------------------
 -- 表示関連
 -----------------------------------------------------------
