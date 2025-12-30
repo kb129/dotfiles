@@ -1,0 +1,7 @@
+README.md
+renovate.json
+{{ if ne .chezmoi.os "darwin" }}
+.config/karabiner
+.config/ghostty
+Library/Application\ Support/Rectangle
+{{ end}}

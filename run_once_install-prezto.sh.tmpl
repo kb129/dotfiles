@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+    echo "Prezto is already installed. Skipping..."
+    exit 0
+fi
+
+echo "Installing Prezto..."
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"

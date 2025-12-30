@@ -1,0 +1,30 @@
+{
+  "title": "Ctrl+h/l to Arrow keys",
+  "rules": [
+    {
+      "description": "Ctrl+h -> Left Arrow, Ctrl+l -> Right Arrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": { "mandatory": ["control"] }
+          },
+          "to": [
+            { "key_code": "left_arrow" }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": { "mandatory": ["control"] }
+          },
+          "to": [
+            { "key_code": "right_arrow" }
+          ]
+        }
+      ]
+    }
+  ]
+}
