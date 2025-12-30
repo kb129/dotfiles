@@ -7,16 +7,16 @@
   "platformAutomerge": true,
   "packageRules": [
     {
-      "matchPackagePatterns":[
-          "*"
-      ],
       "matchUpdateTypes": [
         "digest",
         "patch",
         "minor"
       ],
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "*"
+      ]
     }
   ]
 }
