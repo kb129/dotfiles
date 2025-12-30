@@ -9,7 +9,6 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.fileformats = { "unix", "dos", "mac" }
 
 vim.opt.number = true -- 行番号を表示
-vim.opt.relativenumber = true -- 相対行番号
 vim.opt.cursorline = true -- カーソル行をハイライト
 vim.opt.showmatch = true -- 括弧の対応を表示
 vim.opt.termguicolors = true -- True Color 有効化

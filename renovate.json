@@ -7,7 +7,7 @@
   "platformAutomerge": true,
   "packageRules": [
     {
-      "matchFileNames": [
+      "matchPackagePatterns":[
           "*"
       ],
       "matchUpdateTypes": [
@@ -16,10 +16,7 @@
         "minor"
       ],
       "automerge": true,
-      "automergeType": "pr",
-      "schedule": [
-        "at any time"
-      ]
+      "automergeType": "pr"
     }
   ]
 }
