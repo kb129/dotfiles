@@ -14,7 +14,7 @@ vim.opt.showmatch = true -- 括弧の対応を表示
 vim.opt.termguicolors = true -- True Color 有効化
 vim.opt.signcolumn = "yes" -- 常にサイン列を表示（gitsignsなど用）
 
-vim.opt.wrap = false -- 行の折り返しを無効
+vim.opt.wrap = true
 vim.opt.scrolloff = 8 -- 上下に余白を確保
 vim.opt.sidescrolloff = 8
 
