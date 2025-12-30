@@ -52,3 +52,8 @@ tm() {
   fi
 }
 alias t=tm
+# chezmoi aliases
+alias cz='chezmoi'
+alias cze='chezmoi edit'
+alias cza='chezmoi apply'
+alias czcd='cd $(chezmoi source-path)'
